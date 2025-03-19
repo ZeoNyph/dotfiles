@@ -12,7 +12,8 @@
   margin: 5px 5px;
 }
 
-#workspaces, #window {
+#workspaces,
+#window {
   border-radius: 1rem;
   margin: 5px;
   background-color: @surface0;
@@ -48,6 +49,7 @@
 #battery,
 #network,
 #pulseaudio,
+#custom-wallpaper,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
@@ -77,8 +79,10 @@
   color: @yellow;
 }
 
-#backlight, #battery {
-    border-radius: 0;
+#backlight,
+#battery,
+#network {
+  border-radius: 0;
 }
 
 #pulseaudio {
@@ -94,22 +98,25 @@
 }
 
 #custom-lock {
-    border-radius: 1rem 0px 0px 1rem;
-    color: @lavender;
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
 }
 
 #custom-power {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
-    color: @red;
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
 }
 
-#tray{
+#tray {
   margin-right: 1rem;
   border-radius: 1rem;
 }
 
-#network{
+
+#custom-wallpaper {
   border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  color: @lavender;
 }

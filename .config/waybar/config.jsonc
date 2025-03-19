@@ -17,6 +17,7 @@
         "backlight",
         "battery",
         "network",
+        "custom/wallpaper",
         "tray",
         "custom/lock",
         "custom/power"
@@ -27,22 +28,15 @@
         "format": " {icon} ",
         "format-icons": {
             "default": ""
-        },
-        "window-rewrite-default": "",
-        "window-rewrite": {
-            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
-            "class<firefox>": "", // Windows whose classes are "firefox"
-            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-            "code": "󰨞"
         }
     },
     "custom/music": {
         "format": " ",
         "escape": true,
         "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
+        "tooltip": true,
+        "tooltip-format": "{}",
+        "exec": "playerctl metadata --format='Now playing: {{ title }} - {{ artist }}'",
         "on-click": "playerctl play-pause",
         "max-length": 50
     },
@@ -71,7 +65,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon}",
+        "format": "{icon} {capacity}%",
         "format-charging": "󰂄",
         "format-plugged": "󰂄",
         "format-alt": "{icon}",
@@ -120,6 +114,11 @@
         "on-click": "sh -c '(sleep 0.5s; hyprlock)' & disown",
         "format": ""
     },
+    "custom/wallpaper": {
+        "tooltip": false,
+        "on-click": "~/Scripts/wallpaper.sh",
+        "format": ""
+    },
     "custom/power": {
         "tooltip": false,
         "on-click": "wlogout &",
@@ -147,7 +146,8 @@
             "(.*) — Github": "$1  ",
             "(.*)Github": "Github ",
             "(.*)Spotify Free": "Spotify 󰓇",
-            "(.*)Spotify Premiun": "Spotify 󰓇",
+            "(.*)Spotify Premium": "Spotify 󰓇",
+	    "(.*) - Obsidian (.*)": "$1 󰠮"
         },
         "max-length": 50
     }
