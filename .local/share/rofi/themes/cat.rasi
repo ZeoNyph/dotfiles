@@ -1,6 +1,6 @@
 configuration {
   display-drun: "Applications";
-  font: "JetBrainsMono Nerd Font Bold 10.5";
+  font: "SF Pro Text 10.5";
   show-icons: true;
 }
 

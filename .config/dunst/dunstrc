@@ -25,7 +25,7 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 300
+    width = (0, 300)
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
@@ -35,8 +35,8 @@
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
     #       and the given value is treated as the maximum height
 
-    # Position the notification in the top right corner
-    origin = top-right
+    # Position the notification in the top corner
+    origin = "top-right"
 
     # Offset from the origin
     # NOTE: Dunst from version 1.11 and older use this alternative notation
@@ -76,7 +76,7 @@
     progress_bar_corners = all
 
     # Corner radius for the icon image.
-    icon_corner_radius = 0
+    icon_corner_radius = 6
 
     # Define which corners to round when drawing the icon image. If icon_corner_radius
     # is set to 0 this option will be ignored.
@@ -272,7 +272,7 @@
     # corners.
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
-    corner_radius = 6
+    corner_radius = 9
 
     # Define which corners to round when drawing the window. If the corner radius
     # is set to 0 this option will be ignored.

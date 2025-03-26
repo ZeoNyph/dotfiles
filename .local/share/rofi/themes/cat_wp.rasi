@@ -1,5 +1,5 @@
 configuration {
-  font: "JetBrainsMono Nerd Font Bold 10.5";
+  font: "SF Pro Text 10.5";
   show-icons: true;
 }
 
@@ -37,14 +37,13 @@ configuration {
 }
 element {
   orientation: vertical;
-  children: [ element-icon, element-text ];
-  horizontal-align: 0.5;
-  vertical-align: 0.5;
+  children: [element-icon, element-text];
   border-radius: 9px;
   border: 0;
 }
 element-text{
     horizontal-align: 0.5;
+    vertical-align: 0.5;
 }
 element-icon {
     margin: 10px;
@@ -54,9 +53,9 @@ listview {
     layout: horizontal;
     lines: 4;
     scrollbar: false;
-    columns: 2;
+    columns: 1;
     spacing: 5px;
-    dynamic: true;
+    dynamic: false;
 }
 inputbar{
     enabled: false;
@@ -64,11 +63,17 @@ inputbar{
 }
 box{
     border: 0;
+    padding: 0;
+}
+mainbox{
+    padding: 0;
 }
 scrollbar{
     enabled: false;
+    padding: 0;
 }
 window{
+    padding: 0;
+    width: 75%;
     border-radius: 9px;
-    width: 70%;
 }
