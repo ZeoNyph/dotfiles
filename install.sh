@@ -88,14 +88,14 @@ else
 fi
 
 echo -e "\033[7:32""mCopying dotfiles...\033[0m"
-cp -r .config/* ~/.config/
-cp -r .local/* ~/.local/
+mkdir -p ~/.config/ && cp -r .config/* ~/.config/
+mkdir -p ~/.config/ && cp -r .local/* ~/.local/
 
 echo -e "\033[7:32""mCopying scripts...\033[0m"
-cp -r Scripts/* ~/Scripts/
+mkdir -p ~/Scripts && cp -r Scripts/* ~/Scripts/ 
 
 echo -e "\033[7:32""mCopying wallpapers...\033[0m"
-cp -r Wallpapers/* ~/Pictures/Wallpapers/
+mkdir -p ~/Pictures/Wallpapers && cp -r Wallpapers/* ~/Pictures/Wallpapers/
 
 clear
 sleep .5
