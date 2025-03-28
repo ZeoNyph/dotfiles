@@ -3,6 +3,8 @@
 # Author: ZeoNyph
 # This script is meant to be run on a minimal Arch Linux installation.
 
+echo "export CLICOLOR=1" >> ~/.bashrc
+
 cat << "EOF"
 
 .___                 __         .__  .__          __  .__               
@@ -21,7 +23,7 @@ fi
 
 echo -e "\033[7:32mRunning ZeoNyph's dotfiles install script...\033[0m"
 
-echo -e "\033[7:32mUpdating system...\033[0m"
+echo -e "\033[7:32mUpdating system using pacman...\033[0m"
 sudo pacman -Syu
 
 clear
@@ -45,7 +47,7 @@ if lspci -k -d ::03xx | grep -q "Intel"; then
     echo -e "\033[7:32m""Installing Intel GPU drivers...\033[0m"
     yay -S --needed mesa vulkan-intel
 else
-    echo -e "\033[7:33""mNo NVIDIA GPU detected, skipping...\033[0m"
+    echo -e "\033[7:33""mNo Intel GPU detected, skipping...\033[0m"
 fi   
 
 clear
@@ -60,9 +62,9 @@ fi
 clear
 sleep .5
 if echo $SHELL | grep -q "zsh"; then
-    echo -e "\033[7:33""mZsh already set as default shell, skipping...\033[0m"
+    echo -e "\033[7:33""mzsh already set as default shell, skipping...\033[0m"
 else
-    echo -e "\033[7:32""mSetting Zsh as default shell...\033[0m"
+    echo -e "\033[7:32""mSetting zsh as default shell...\033[0m"
     chsh -s /usr/bin/zsh
 fi
 
@@ -98,7 +100,7 @@ cp -r Wallpapers/* ~/Pictures/Wallpapers/
 clear
 sleep .5
 echo -e "\033[7:32""mSetting up systemd services...\033[0m"
-sudo systemctl enable --now NetworkManager bluetooth hostapd dnsmasq polkit udisks2 acpid power-profiles-daemon
+sudo systemctl enable --now NetworkManager sddm bluetooth hostapd dnsmasq polkit udisks2 acpid power-profiles-daemon
 
 clear
 echo -e "\033[7:32""mDone! Reboot to see your changes.\033[0m"
