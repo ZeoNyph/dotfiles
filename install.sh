@@ -31,7 +31,7 @@ sleep .5
 if ! command -v yay &> /dev/null; then
     echo -e "\033[7:32""m Installing yay...\033[0m"
     sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
-    rm ~/yay -r
+    sudo rm ~/yay -r
 else
     echo -e "\033[7:33""mYay already installed, skipping...\033[0m"
 fi
