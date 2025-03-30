@@ -51,6 +51,7 @@
 #network,
 #pulseaudio,
 #custom-wallpaper,
+#custom-notification,
 #custom-lock,
 #custom-power {
   background-color: @surface0;
@@ -61,7 +62,7 @@
 #clock {
   color: @blue;
   border-radius: 1rem;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
 }
 
 #battery {
@@ -94,6 +95,12 @@
 
 #custom-music {
   color: @mauve;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+}
+
+#custom-notification {
+  color: @white;
   border-radius: 1rem;
   margin-right: 0.5rem;
 }
