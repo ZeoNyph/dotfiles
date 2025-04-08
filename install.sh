@@ -26,7 +26,6 @@ echo -e "\033[7:32mRunning ZeoNyph's dotfiles install script...\033[0m"
 echo -e "\033[7:32mUpdating system using pacman...\033[0m"
 sudo pacman -Syu
 
-clear
 sleep .5
 if ! command -v yay &> /dev/null; then
     echo -e "\033[7:32""m Installing yay...\033[0m"
@@ -36,12 +35,11 @@ else
     echo -e "\033[7:33""mYay already installed, skipping...\033[0m"
 fi
 
-clear
-sleep .5
+sleep 1
 echo -e "\033[7:32""mInstalling packages...\033[0m"
-yay -S --needed - < pkg_essential.txt
+yay -S --needed - < ~/Repos/dotfiles/pkg.txt
 
-clear
+
 sleep .5
 if lspci -k -d ::03xx | grep -q "Intel"; then
     echo -e "\033[7:32m""Installing Intel GPU drivers...\033[0m"
@@ -50,7 +48,6 @@ else
     echo -e "\033[7:33""mNo Intel GPU detected, skipping...\033[0m"
 fi   
 
-clear
 sleep .5
 if lspci -k -d ::03xx | grep -q "NVIDIA"; then
     echo -e "\033[7:32""mInstalling NVIDIA GPU drivers...\033[0m"
@@ -59,7 +56,6 @@ else
     echo -e "\033[7:33""mNo NVIDIA GPU detected, skipping...\033[0m"
 fi   
 
-clear
 sleep .5
 if echo $SHELL | grep -q "zsh"; then
     echo -e "\033[7:33""mzsh already set as default shell, skipping...\033[0m"
@@ -68,7 +64,6 @@ else
     chsh -s /usr/bin/zsh
 fi
 
-clear
 sleep .5
 if test -d ~/.oh-my-zsh; then
     echo -e "\033[7:33""mOh My Zsh already installed, skipping...\033[0m"
@@ -77,7 +72,6 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-clear
 sleep .5
 if grep -q "powerlevel10k" ~/.zshrc; then 
     echo -e "\033[7:33""mPowerlevel10k already installed, skipping...\033[0m"
@@ -86,6 +80,12 @@ else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
     sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 fi
+
+echo -e "\033[7:32""mInstalling SDDM theme...\033[0m"
+sudo mkdir -p /etc/sddm.conf.d
+yay -S sddm-theme-corners-git
+sudo echo "[Theme]" >> /etc/sddm.conf.d/default.conf
+sudo echo "Current=corners" >> /etc/sddm.conf.d/default.conf
 
 echo -e "\033[7:32""mCopying dotfiles...\033[0m"
 mkdir -p ~/.config/ && cp -r .config/* ~/.config/
@@ -97,7 +97,6 @@ mkdir -p ~/Scripts && cp -r Scripts/* ~/Scripts/
 echo -e "\033[7:32""mCopying wallpapers...\033[0m"
 mkdir -p ~/Pictures/Wallpapers && cp -r Wallpapers/* ~/Pictures/Wallpapers/
 
-clear
 sleep .5
 echo -e "\033[7:32""mSetting up systemd services...\033[0m"
 sudo systemctl enable --now NetworkManager sddm bluetooth hostapd dnsmasq polkit udisks2 acpid power-profiles-daemon

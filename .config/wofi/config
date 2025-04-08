@@ -1,0 +1,11 @@
+style=.config/wofi/style.css
+show=drun
+width=30%
+height=40%
+allow_images=true
+prompt=Applications
+lines=8
+dynamic_lines=true
+single_click=true
+insensitive=true
+

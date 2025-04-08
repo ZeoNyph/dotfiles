@@ -26,10 +26,6 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "sort-by-name": true,
-        "format": " {icon} ",
-        "format-icons": {
-            "default": ""
-        }
     },
     "custom/music": {
         "format": " ",
@@ -39,6 +35,8 @@
         "tooltip-format": "{}",
         "exec": "playerctl metadata --format='Now playing: {{ title }} - {{ artist }}'",
         "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",  
         "max-length": 50
     },
     "clock": {

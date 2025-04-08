@@ -1,0 +1,28 @@
+@import ".cache/wal/colors-waybar.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+}
+
+#window {
+    background-color: @background;
+}
+
+#outer-box {
+    border-radius: 9px;
+    background-color: @color0;
+}
+
+#input {
+    color: @foreground;
+}
+
+#inner-box{
+    background-color: @background;
+}
+
+#entry{
+    color: @foreground;
+    padding: 5px 0 5px 5px;
+}
