@@ -37,16 +37,12 @@ jdk-openjdk
 kcalc
 kitty
 kvantum
-libmysqlclient
 libpulse
 libreoffice-fresh
 linux
 linux-firmware
 man-db
 maven
-mysql
-mysql-clients
-mysql-debug
 nano
 neovim
 net-tools
