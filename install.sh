@@ -102,32 +102,29 @@ echo -e "\033[32""mInstalling SDDM theme...\033[0m"
 sudo mkdir -p /etc/sddm.conf.d
 yay -S sddm-theme-corners-git
 echo -e "\033[32""mEditing SDDM config...\033[0m"
-sudo echo "[Theme]" >> /etc/sddm.conf.d/default.conf
-sudo echo "Current=corners" >> /etc/sddm.conf.d/default.conf
+sudo echo -e "[Theme]\nCurrent=corners" | sudo tee -a /etc/sddm.conf.d/default.conf > /dev/null
 
 # Copy configs, scripts and wallpapers
 
 sleep .5
 clear
 echo -e "\033[32""mCopying dotfiles...\033[0m"
-mkdir -p ~/.config/ && cp -r .config/* ~/.config/
+mkdir -p ~/.config/ && cp -r "$SCRIPT_DIR/.config/"* ~/.config/
 
 echo -e "\033[32""mCopying scripts...\033[0m"
-mkdir -p ~/Scripts && cp -r Scripts/* ~/Scripts/ 
+mkdir -p ~/Scripts && cp -r "$SCRIPT_DIR/Scripts/"* ~/Scripts/
 
 echo -e "\033[32""mCopying wallpapers...\033[0m"
-mkdir -p ~/Pictures/Wallpapers && cp -r Wallpapers/* ~/Pictures/Wallpapers/
+mkdir -p ~/Pictures/Wallpapers && cp -r "$SCRIPT_DIR/Wallpapers/"* ~/Pictures/Wallpapers/
 
 # Final steps
 
 sleep .5
 clear
 echo -e "\033[32""mSetting up systemd services...\033[0m"
-sudo systemctl enable --now NetworkManager bluetooth hostapd dnsmasq polkit udisks2 acpid power-profiles-daemon
+sudo systemctl enable --now NetworkManager bluetooth hostapd dnsmasq polkit udisks2 acpid
+sudo systemctl enable sddm # done separately to avoid sudden SDDM bootup
 
 clear
-echo -e "\033[32""mDone! Login using SDDM (or reboot if already installed) to see your changes.\033[0m"
-sleep 1
-echo -e "\033[32""mEnabling SDDM daemon...\033[0m"
-sudo systemctl enable --now sddm
+echo -e "\033[32""mDone! Reboot to see your changes.\033[0m"
 exit 0
