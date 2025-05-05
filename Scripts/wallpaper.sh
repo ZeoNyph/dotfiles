@@ -36,7 +36,9 @@ if [ -z "$WALLPAPER" ]; then
 else
     wp="$WALLPAPER_DIR/$WALLPAPER"
     swww img "$wp" --transition-type=grow --transition-duration=1.5 --transition-pos=0.89,0.975 && wal -i "$wp" -n -e && pywalfox update && swaync-client -rs
+    convert -scale 10% -blur 0x3 -resize 1000% "$wp" ~/.config/wlogout/bg.png   
     mv ~/.cache/wal/colors-spicetify.ini ~/.config/spicetify/Themes/Pywal/color.ini
+    cp ~/.cache/wal/colors-waybar.css ~/.config/wlogout/colors.css
     source ~/.cache/wal/colors.sh
     spicetify refresh
     mv ~/.cache/wal/pywal.kvconfig ~/.config/Kvantum/pywal/pywal.kvconfig

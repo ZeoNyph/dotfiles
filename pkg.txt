@@ -69,6 +69,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 plymouth
+plymouth-theme-arch-os
 polkit-gnome
 polkit-kde-agent
 popsicle
@@ -118,5 +119,6 @@ xdg-user-dirs
 xorg-xrandr
 yay
 yay-debug
+zathura
 zram-generator
 zsh
