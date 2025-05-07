@@ -4,7 +4,7 @@ SCRIPT_DIR=$(dirname "$(realpath $0)")
 
 get_sync_choice()
 {
-    echo -e "How would you like to sync your config\n1: Repository > Local\n2: Local > Repository"
+    echo -e "How would you like to sync your config?\n1: Repository > Local\n2: Local > Repository"
     read -p "Option (1,2): " SYNC_OPTION
     case $SYNC_OPTION in
         1)

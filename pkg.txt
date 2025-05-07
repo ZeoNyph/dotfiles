@@ -1,5 +1,6 @@
 acpid
 apple-fonts
+arc-gtk-theme
 archlinux-xdg-menu
 ark
 base
@@ -94,6 +95,7 @@ spotify-launcher
 steam-native-runtime
 swaync
 swww
+tela-circle-icon-theme-all
 tlpui-git
 ttf-cascadia-code-nerd
 ttf-cascadia-mono-nerd
@@ -118,7 +120,6 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xorg-xrandr
 yay
-yay-debug
 zathura
 zram-generator
 zsh

@@ -6,23 +6,33 @@
 }
 
 #window {
-    background-color: @background;
+    background-color: @color0;
 }
 
 #outer-box {
     border-radius: 9px;
-    background-color: @color0;
+    background-color: none;
 }
 
 #input {
-    color: @foreground;
+    color: @color15;
+    background-color: @color0;
+    font-weight: 300;
+    font-style: italic;
 }
 
-#inner-box{
+#inner-box {
     background-color: @background;
 }
 
-#entry{
+#entry {
     color: @foreground;
     padding: 5px 0 5px 5px;
+}
+
+#entry:selected {
+    color: @color0;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: @color1;
 }
