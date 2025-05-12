@@ -41,6 +41,7 @@ hyprlock
 hyprpolkitagent
 intel-ucode
 jdk-openjdk
+jmeter
 kcalc
 kitty
 kvantum
@@ -106,6 +107,7 @@ ttf-nerd-fonts-symbols-mono
 ttf-unifont
 udiskie
 unzip
+uv
 uwsm
 vi
 visual-studio-code-bin
@@ -120,6 +122,7 @@ xdg-desktop-portal-hyprland
 xdg-user-dirs
 xorg-xrandr
 yay
+zaproxy
 zathura
 zram-generator
 zsh

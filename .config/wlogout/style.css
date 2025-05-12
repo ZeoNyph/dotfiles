@@ -26,12 +26,11 @@ button {
 	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-button:focus {
+/*button:focus {
 	background-size: 22%;
 	border: 0px;
-}
-
-button:hover {
+}*/
+button:hover, button:selected, button:focus{
 	background-color: @color6;
 	opacity: 0.8;
 	color: @background;
