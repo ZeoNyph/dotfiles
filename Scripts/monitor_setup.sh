@@ -23,7 +23,7 @@ else
         exit 0
     fi
     hypr_str="monitor=${id},${res::-2},${pos},${scale}"
-    if grep -q "$id" "$hyprconf"
+    if grep -q "=$id," "$hyprconf"
     then
         sed -i -e "s#monitor=$id.*#$hypr_str#g" "$hyprconf"
     else

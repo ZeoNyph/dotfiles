@@ -4,6 +4,7 @@
   font-size: 15px;
   font-weight: bold;
   min-height: 0;
+  opacity: 0.97;
 }
 
 #waybar {
@@ -14,7 +15,6 @@
 
 #workspaces,
 #window {
-  border-radius: 1rem;
   margin: 5px;
   background-color: @background;
   margin-left: 1rem;
@@ -28,18 +28,17 @@
 
 #workspaces button {
   color: @color2;
-  border-radius: 1rem;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
-  color: @color7;
-  border-radius: 1rem;
+  color: @background;
+  background-color: @color6;
+  border-radius: 0;
 }
 
 #workspaces button:hover {
   color: @foreground;
-  border-radius: 1rem;
 }
 
 #custom-music,
@@ -59,8 +58,7 @@
 }
 
 #clock {
-  color: @color5;
-  border-radius: 1rem;
+  color: @text1;
   margin-right: 0.5rem;
 }
 
@@ -77,7 +75,7 @@
 }
 
 #backlight {
-  color: @foreground;
+  color: @text;
 }
 
 #backlight,
@@ -87,43 +85,38 @@
 }
 
 #pulseaudio {
-  color: @color13;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
+  color: @text;
 }
 
 #custom-music {
-  color: @color14;
-  border-radius: 1rem;
+  color: @text;
   margin-right: 0.5rem;
 }
 
 #custom-notification {
   color: @foreground;
-  border-radius: 1rem;
   margin-right: 0.5rem;
 }
 
 #custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
-  color: @color4;
+  color: @text;
 }
 
 #custom-power {
   margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
   color: @red;
 }
 
 #tray {
   margin-right: 1rem;
-  border-radius: 1rem;
 }
 
+#network {
+  color: @text;
+}
 
 #custom-wallpaper {
-  border-radius: 0px 1rem 1rem 0px;
   margin-right: 1rem;
   padding: 0.5rem 1rem;
-  color: @color9;
+  color: @text;
 }

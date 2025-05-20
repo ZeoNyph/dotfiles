@@ -1,3 +1,4 @@
+acpi
 acpid
 apple-fonts
 arc-gtk-theme
@@ -23,6 +24,7 @@ dolphin
 drawio-desktop
 edk2-shell
 efibootmgr
+eigen
 fastfetch
 firefox
 ghostty
@@ -66,6 +68,7 @@ obs-studio
 onedrivegui
 os-prober
 pavucontrol
+pbzip2
 pipewire
 pipewire-alsa
 pipewire-jack
@@ -76,6 +79,7 @@ polkit-gnome
 polkit-kde-agent
 popsicle
 potrace
+protobuf
 python-matplotlib
 python-pip
 python-pywalfox
@@ -85,6 +89,8 @@ qt5-quickcontrols2
 qt5-wayland
 qt5ct
 qt6ct
+ranger
+reflector
 rofi-wayland
 sassc
 sddm
@@ -93,8 +99,8 @@ slack-desktop
 slurp
 spicetify-cli
 spotify-launcher
-steam-native-runtime
 swaync
+swig
 swww
 tela-circle-icon-theme-all
 tlpui-git
@@ -113,6 +119,9 @@ vi
 visual-studio-code-bin
 vulkan-intel
 waybar
+webots-bin
+wev
+wget
 wireplumber
 wl-clipboard
 wlogout
@@ -124,5 +133,7 @@ xorg-xrandr
 yay
 zaproxy
 zathura
+zip
+zoom
 zram-generator
 zsh
