@@ -39,15 +39,18 @@
             "(.*)Steam": "󰓓 ",
             "(.*) - Discord": " ",
             "(.*)Netflix": "󰝆",
-            "(.*) — Google chrome": "$1  ",
-            "(.*)Google chrome": "Google Chrome  ",
-            "(.*) — Github": "$1  ",
-            "(.*)Github": " Github ",
-            "(.*)Spotify Free": " Spotify 󰓇",
-            "(.*)Spotify Premium": " Spotify 󰓇",
+            "(.*) — Google chrome": " ",
+            "(.*)Google chrome": " ",
+            "(.*) — Github": " ",
+            "(.*)Github": " ",
+            "(.*)Spotify Free": "󰓇 ",
+            "(.*)Spotify Premium": "󰓇 ",
 	    "(.*) - Obsidian (.*)": "$1 󰠮",
             "Slack": " ",
-            "zoom": " "
+            "zoom": " ",
+            "org.pulseaudio.pavucontrol": " ",
+            "libreoffice-writer": " ",
+            "feh": " "
         },
     },
     "custom/music": {
@@ -194,4 +197,8 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
   },
+   "tray": {
+        "spacing": 6,
+        "expand": true
+    }
 }
