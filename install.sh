@@ -44,24 +44,25 @@ fi
 sleep 1
 clear
 echo -e "\033[32""mInstalling packages...\033[0m"
-yay -S --needed - < "$SCRIPT_DIR/pkg.txt"
+yay -S --needed - < "$SCRIPT_DIR/deps.txt"
 
 # Install GPU drivers
 
 sleep .5
 clear
+echo -e "\033[32m""Installing base GPU drivers...\033[0m"
+yay -S --needed mesa
 if lspci -k -d ::03xx | grep -q "Intel"; then
     echo -e "\033[32m""Installing Intel GPU drivers...\033[0m"
-    yay -S --needed mesa vulkan-intel
-elif lspci -k -d ::03xx | grep -q "NVIDIA"; then
+    yay -S --needed vulkan-intel
+fi
+if lspci -k -d ::03xx | grep -q "NVIDIA"; then
     echo -e "\033[32""mInstalling NVIDIA GPU drivers...\033[0m"
     yay -S --needed nvidia-open nvidia-utils nvidia-settings
 elif lspci -k -d ::03xx | grep -q "AMD"; then
     echo -e "\033[32m""Installing AMD GPU drivers...\033[0m"
     yay -S --needed mesa vulkan-radeon
-else
-    echo -e "\033[32m""Installing base GPU drivers...\033[0m"
-    yay -S --needed mesa
+    
 fi   
 
 # Set shell and prompt (zsh, oh-my-zsh, powerlevel10k)
@@ -123,6 +124,7 @@ sleep .5
 clear
 echo -e "\033[32""mSetting up systemd services...\033[0m"
 sudo systemctl enable --now NetworkManager bluetooth hostapd dnsmasq polkit udisks2 acpid
+systemctl enable --user waybar
 sudo systemctl enable sddm # done separately to avoid sudden SDDM bootup
 
 clear

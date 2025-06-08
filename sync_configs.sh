@@ -42,8 +42,6 @@ copy_to_repo()
     cp -r "$SCRIPTS_DIR"/*.sh "$REPO_SCRIPTS_DIR/"
     echo "Shell scripts copied to repo"
 
-    echo -e "Copying yay package list to repo"
-    yay -Qqe > "$SCRIPT_DIR"/pkg.txt
     echo -e "Done!"
 }
 
@@ -68,12 +66,6 @@ copy_from_repo()
     mkdir -p "$SCRIPTS_DIR"
     cp -r "$REPO_SCRIPTS_DIR"/*.sh "$SCRIPTS_DIR/"
     echo "Shell scripts copied from repo"
-
-    echo -e "Updating system first..."
-    yay
-
-    echo -e "Installing any uninstalled yay packages"
-    yay -S --needed - < "$SCRIPT_DIR/pkg.txt"
 
     echo -e "Done!"
 }
