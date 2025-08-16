@@ -44,7 +44,7 @@ fi
 sleep 1
 clear
 echo -e "\033[32""mInstalling packages...\033[0m"
-yay -S --needed - < "$SCRIPT_DIR/deps.txt"
+install_package < "$SCRIPT_DIR/deps.txt"
 
 # Install GPU drivers
 
@@ -130,3 +130,19 @@ sudo systemctl enable sddm # done separately to avoid sudden SDDM bootup
 clear
 echo -e "\033[32""mDone! Reboot to see your changes.\033[0m"
 exit 0
+
+install_package() {
+    OS_RELEASE=$(cat /etc/os-release)
+    if echo "$OS_RELEASE" | grep -q "Arch"; then
+            if command -v yay &> /dev/null; then
+                    yay -S --needed "$@"
+            else
+                    sudo pacman -S --needed "$@"
+            fi
+    elif echo "$OS_RELEASE" | grep -q "Ubuntu"; then
+            sudo apt install -y "$@"
+    else
+            echo "Unsupported OS. Please install the packages manually."
+            exit 1
+    fi
+}

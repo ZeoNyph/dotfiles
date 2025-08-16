@@ -5,6 +5,7 @@ wofi
 kvantum
 nwg-look
 nwg-displays
+networkmanager
 qt5ct
 qt6ct
 spicetify-cli
@@ -16,3 +17,4 @@ sddm
 python-pywal16
 python-pywalfox
 nvim
+zsh
